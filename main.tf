@@ -15,3 +15,12 @@ module "compute" {
   subnet_id           = module.network.subnet_id
 }
 
+terraform {
+  backend "remote" {
+    organization = "ACME_Corp_Org"
+
+    workspaces {
+      name = "terraform-azure-demo"
+    }
+  }
+}
